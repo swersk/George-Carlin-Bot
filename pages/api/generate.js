@@ -1,22 +1,21 @@
 // generate.js
 import { Configuration, OpenAIApi } from "openai";
-require('dotenv').config()
+const dotenv = require('dotenv');
+
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+const openai = new OpenAIApi(configuration);
 
 export default async function (req, res) {
-  if (!configuration.apiKey || !process.env.OPENAI_API_KEY) {
+  if (!process.env.OPENAI_API_KEY) {
     res.status(500).json({
       error: {
-        message: "OpenAI API key not configured",
+        message: "OpenAI API key not configured.",
       }
     });
     return;
   }
-
-  const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
-  });
-  const openai = new OpenAIApi(configuration);
-
 
   const userInput = req.body.userInput || '';
   if (userInput.trim().length === 0) {
