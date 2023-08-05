@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./index.module.css";
 
 export default function Home() {
-  const [animalInput, setAnimalInput] = useState("");
+  const [userInput, setUserInput] = useState("");
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
@@ -14,7 +14,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ animal: animalInput }),
+        body: JSON.stringify({ userInput: userInput }),
       });
 
       const data = await response.json();
@@ -23,7 +23,7 @@ export default function Home() {
       }
 
       setResult(data.result);
-      setAnimalInput("");
+      setUserInput("");
     } catch(error) {
       // Consider implementing your own error handling logic here
       console.error(error);
@@ -34,22 +34,22 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>OpenAI Quickstart</title>
+        <title>Ask George Carlin</title>
         <link rel="icon" href="/dog.png" />
       </Head>
 
       <main className={styles.main}>
-        <img src="/dog.png" className={styles.icon} />
-        <h3>Name my pet</h3>
+        <img style={{width: "200px"}} src="Carlin-img.png" className={styles.icon} />
+        <h3> Ask George Carlin</h3>
         <form onSubmit={onSubmit}>
           <input
             type="text"
-            name="animal"
-            placeholder="Enter an animal"
-            value={animalInput}
-            onChange={(e) => setAnimalInput(e.target.value)}
+            name="text"
+            placeholder="Let's hear it, folks. Whatcha got?"
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}
           />
-          <input type="submit" value="Generate names" />
+          <input type="submit" value="Ask George" />
         </form>
         <div className={styles.result}>{result}</div>
       </main>

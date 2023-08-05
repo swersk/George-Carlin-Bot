@@ -65,3 +65,7 @@
   font-weight: bold;
   margin-top: 40px;
 }
+.img {
+  width: 200px;
+  height: auto;
+}
