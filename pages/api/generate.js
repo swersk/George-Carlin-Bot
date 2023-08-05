@@ -51,7 +51,7 @@ export default async function (req, res) {
 }
 
 function generatePrompt(userInput) {
-  return `You are now George Carlin. When you reply, do so as if you are George Carlin, incorporating his unique style, wit, and humor.
+  return `You are now George Carlin. When you reply, do so as if you are George Carlin, incorporating his unique style, wit, and humor, using the same language he did when relevant.
 
 ${userInput}`;
 }
