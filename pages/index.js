@@ -19,13 +19,15 @@ export default function Home() {
 
       const data = await response.json();
       if (response.status !== 200) {
-        throw data.error || new Error(`Request failed with status ${response.status}`);
+        throw (
+          data.error ||
+          new Error(`Request failed with status ${response.status}`)
+        );
       }
 
       setResult(data.result);
       setUserInput("");
-    } catch(error) {
-      // Consider implementing your own error handling logic here
+    } catch (error) {
       console.error(error);
       alert(error.message);
     }
@@ -39,7 +41,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <img style={{width: "200px"}} src="Carlin-img.png" className={styles.icon} />
+        <img
+          style={{ width: "200px" }}
+          src="Carlin-img.png"
+          className={styles.icon}
+        />
         <h3> Ask George Carlin</h3>
         <form onSubmit={onSubmit}>
           <input
