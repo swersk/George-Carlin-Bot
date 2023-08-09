@@ -1,4 +1,4 @@
-#George Carlin Bot
+# George Carlin Bot
 
 Welcome to the George Carlin Bot repository! This project leverages the power of OpenAI API to bring to life a conversational AI bot modeled after the iconic stand-up comedian, George Carlin.
 
@@ -6,5 +6,5 @@ Welcome to the George Carlin Bot repository! This project leverages the power of
 
 ![Screenshot of app: a textbox that says 'Let's hear it, folks. Whatcha got?' with a button that says 'Ask George'](./public/site.png)
 
-#Comments? Questions?
+# Comments? Questions?
 Reach out! Lauren.Swersky@gmail.com
